@@ -29,3 +29,4 @@ static BOOL RCTParseUnused(const char **input)
 
 ### issues
 - [libTalkingDataSDK.a](ios%2FlibTalkingDataSDK.a) not support ios simulators, but support real iphone.
+- [TalkingDataSDK.xcframework](ios%2FTalkingDataSDK.xcframework) support both ios simulators and real iphone.
