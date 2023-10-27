@@ -241,12 +241,12 @@ RCT_EXPORT_METHOD(onSearch:(NSString *)search)
   NSDictionary * dictADS = [NSJSONSerialization JSONObjectWithData:[search dataUsingEncoding:NSUTF8StringEncoding] options:0 error:&error];
   s.category = dictADS[@"category"];
   s.content = dictADS[@"content"];
-  s.destination = dictADS[@"destination"];
-  s.origin = dictADS[@"origin"];
-  s.itemId = dictADS[@"item_id"];
-  s.itemLocationId = dictADS[@"item_location_id"];
-  s.startDate = [dictADS[@"startDate"] longLongValue];
-  s.endDate = [dictADS[@"endDate"] longLongValue];
+  // s.destination = dictADS[@"destination"];
+  // s.origin = dictADS[@"origin"];
+  // s.itemId = dictADS[@"item_id"];
+  // s.itemLocationId = dictADS[@"item_location_id"];
+  // s.startDate = [dictADS[@"startDate"] longLongValue];
+  // s.endDate = [dictADS[@"endDate"] longLongValue];
   [TalkingDataSDK onSearch:s];
 }
 
