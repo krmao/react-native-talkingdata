@@ -115,7 +115,7 @@ RCT_EXPORT_MODULE(TalkingDataSDK);
 
 RCT_EXPORT_METHOD(init:(NSString *)appID channelId:(NSString *)channelId custom:(NSString *)custom)
 {
-  [TalkingDataSDK init:appID channelId:channelId custom:custom];
+  [TalkingDataSDK initSDK:appID channelId:channelId custom:custom];
 }
 
 RCT_REMAP_METHOD(getDeviceID, getDeviceID:(RCTPromiseResolveBlock)resolve
