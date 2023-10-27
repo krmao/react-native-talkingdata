@@ -26,3 +26,6 @@ static BOOL RCTParseUnused(const char **input)
          RCTReadString(input, "__attribute__((unused))");
 }
 ```
+
+### issues
+- [libTalkingDataSDK.a](ios%2FlibTalkingDataSDK.a) not support ios simulators, but support real iphone.
