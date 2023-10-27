@@ -115,7 +115,19 @@ RCT_EXPORT_MODULE(TalkingDataSDK);
 
 RCT_EXPORT_METHOD(init:(NSString *)appID channelId:(NSString *)channelId custom:(NSString *)custom)
 {
+  [TalkingDataSDK backgroundSessionEnabled];
   [TalkingDataSDK initSDK:appID channelId:channelId custom:custom];
+}
+
+RCT_EXPORT_METHOD(startA)
+{
+  [TalkingDataSDK startA];
+}
+
+RCT_EXPORT_METHOD(setExceptionReportEnabled:(BOOL)enabled)
+{
+    [TalkingDataSDK setExceptionReportEnabled:enabled];
+    [TalkingDataSDK setSignalReportEnabled:enabled];
 }
 
 RCT_REMAP_METHOD(getDeviceID, getDeviceID:(RCTPromiseResolveBlock)resolve

@@ -1,7 +1,7 @@
 
 {
   "name": "@krmao/react-native-talkingdata",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "react-native talkingdata library",
   "main": "index.js",
   "scripts": {

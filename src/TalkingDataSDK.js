@@ -245,6 +245,15 @@ class TalkingDataSDK {
 	static init(appId,channelId,custom){
         TD.init(appId,channelId,custom);
 	}
+
+	static startA(){
+		TD.startA();
+	}
+
+	static setExceptionReportEnabled(enabled){
+		TD.setExceptionReportEnabled(enabled);
+	}
+
 	/**
 	* 获取SDK所使用Device的ID
 	* iOS Android
