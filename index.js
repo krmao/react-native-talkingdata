@@ -1,3 +1,3 @@
-import {TalkingDataSDK,TalkingDataProfile,TalkingDataProfileType,TalkingDataGender,TalkingDataOrder,TalkingDataShoppingCart,TalkingDataSearch,TalkingDataTransaction} from './TalkingDataSDK';
+import {TalkingDataSDK,TalkingDataProfile,TalkingDataProfileType,TalkingDataGender,TalkingDataOrder,TalkingDataShoppingCart,TalkingDataSearch,TalkingDataTransaction} from './src/TalkingDataSDK';
 
 export {TalkingDataSDK,TalkingDataProfile,TalkingDataProfileType,TalkingDataGender,TalkingDataOrder,TalkingDataShoppingCart,TalkingDataSearch,TalkingDataTransaction};
