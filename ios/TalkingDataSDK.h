@@ -90,7 +90,12 @@ typedef NS_ENUM(NSUInteger, TalkingDataGender) {
 // 搜索内容
 @property (nonatomic, strong) NSString *content;
 
-
+@property (nonatomic, strong) NSString *destination;
+@property (nonatomic, strong) NSString *origin;
+@property (nonatomic, strong) NSString *itemId;
+@property (nonatomic, strong) NSString *itemLocationId;
+@property (nonatomic, assign) long long *startDate;
+@property (nonatomic, assign) long long *endDate;
 
 @end
 
