@@ -5,5 +5,5 @@
 ## install
 
 ```shell
-yarn add @codesdancing/react-native-talkingdata
+yarn add @krmao/react-native-talkingdata
 ```
