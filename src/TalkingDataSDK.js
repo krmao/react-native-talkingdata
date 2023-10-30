@@ -180,67 +180,6 @@ class TalkingDataSearch {
 
 }
 
-
-class TalkingDataTransaction {
-
-	constructor(){
-
-	}
-
-	setTransactionId(transactionId){
-		this.transactionId = transactionId;
-	}
-
-	setCategory(category){
-		this.category = category;
-	}
-
-	setAmount(amount){
-		this.amount = amount;
-	}
-
-	setPersonA(personA){
-		this.personA = personA;
-	}
-
-	setPersonB(personB){
-		this.personB = personB;
-	}
-
-	setStartDate(startDate){
-		this.startDate = startDate;
-	}
-
-	setEndDate(endDate){
-		this.endDate = endDate;
-	}
-
-	setCurrencyType(currencyType){
-		this.currencyType = currencyType;
-	}
-
-	setContent(content){
-		this.content = content;
-	}
-
-
-
-  	get transactionStr(){
-  		return JSON.stringify({
-			  'transactionId':this.transactionId,
-			  'category':this.category,
-			  'amount':this.amount,
-			  'personA':this.personA,
-			  'personB':this.personB,
-			  'startDate':this.startDate,
-			  'endDate':this.endDate,
-			  'currencyType':this.currencyType,
-			  'content':this.content,
-  		});
-	}
-
-}
-
 class TalkingDataSDK {
 	static init(appId,channelId,custom){
         TD.init(appId,channelId,custom);
@@ -459,4 +398,4 @@ class TalkingDataSDK {
 
 }
 
-export {TalkingDataSDK,TalkingDataProfile,TalkingDataProfileType,TalkingDataGender,TalkingDataOrder,TalkingDataShoppingCart,TalkingDataSearch,TalkingDataTransaction};
+export {TalkingDataSDK,TalkingDataProfile,TalkingDataProfileType,TalkingDataGender,TalkingDataOrder,TalkingDataShoppingCart,TalkingDataSearch};
