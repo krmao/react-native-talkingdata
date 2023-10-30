@@ -49,5 +49,5 @@ repositories {
 
 dependencies {
     api 'com.facebook.react:react-native:+'
-    api files('libs/SaaS_TalkingDataSDK_Android_V5.0.18.jar')
+    api files(safeExtGet('enableTalkingDataGooglePlay', false) ? 'libs/GooglePlay_TalkingDataSDK_Android_V5.0.12.jar' : 'libs/SaaS_TalkingDataSDK_Android_V5.0.18.jar')
 }

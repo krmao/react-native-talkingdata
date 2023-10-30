@@ -1,14 +1,14 @@
-## react-native-talkingdata
+## @krmao/react-native-talkingdata
 
 [![npm version](https://badge.fury.io/js/@krmao%2Freact-native-talkingdata.svg)](https://badge.fury.io/js/@krmao%2Freact-native-talkingdata)
 
-### install
+### Install
 
 ```shell
 yarn add @krmao/react-native-talkingdata
 ```
 
-### init
+### Init
 
 ```typescript
 //region init talkingdata
@@ -21,7 +21,7 @@ TalkingDataSDK.setExceptionReportEnabled(true);
 //endregion
 ```
 
-### for typescript
+### For Typescript
 
 > react-native-talkingdata.d.ts
 
@@ -41,7 +41,19 @@ declare module '@krmao/react-native-talkingdata' {
 }
 ```
 
-### issues
+### For Google Play
+
+> config root build.gradle in android project
+
+```
+buildscript {
+    ext {
+        enableTalkingDataGooglePlay = true // default false
+    }
+}
+```
+
+### Issues
 
 - [libTalkingDataSDK.a](ios%2FlibTalkingDataSDK.a) not support ios simulators, but support real iphone.
 - [TalkingDataSDK.xcframework](ios%2FTalkingDataSDK.xcframework) support both ios simulators and real iphone.
