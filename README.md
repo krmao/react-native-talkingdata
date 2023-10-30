@@ -7,7 +7,9 @@
 ```shell
 yarn add @krmao/react-native-talkingdata
 ```
+
 ### init
+
 ```typescript
 //region init talkingdata
 let appId = Constants.TALKING_DATA_APP_ID;
@@ -39,20 +41,8 @@ declare module '@krmao/react-native-talkingdata' {
 }
 ```
 
-### Xcode11 node_modules post patch
-
-> RCTModuleMethod.m
-
-```
-static BOOL RCTParseUnused(const char **input)
-{
-  return RCTReadString(input, "__unused") ||
-         RCTReadString(input, "__attribute__((__unused__))") ||
-         RCTReadString(input, "__attribute__((unused))");
-}
-```
-
 ### issues
 
 - [libTalkingDataSDK.a](ios%2FlibTalkingDataSDK.a) not support ios simulators, but support real iphone.
 - [TalkingDataSDK.xcframework](ios%2FTalkingDataSDK.xcframework) support both ios simulators and real iphone.
+- [com.apple.commcenter.coretelephony.xpc was invalidated](https://stackoverflow.com/a/54692253/4348530)
