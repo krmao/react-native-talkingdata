@@ -30,7 +30,12 @@ android {
 
     sourceSets {
         main {
-            java.srcDirs enableTalkingDataGooglePlay ? 'src/main/java-googleplay' : 'src/main/java'
+            manifest.srcFile 'src/main/AndroidManifest.xml'
+            if (enableTalkingDataGooglePlay) {
+                java.srcDirs = ['src/main/java-googleplay'];
+            } else {
+                java.srcDirs = ['src/main/java']
+            }
         }
     }
 
