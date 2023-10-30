@@ -37,12 +37,18 @@ public class TalkingDataSDKPlugin extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void init(String appId, String channelId, String custom) {
-        TalkingDataSDK.initSDK(context, appId, channelId, custom);
+        if(!com.talkingdata.sdk.BuildConfig.enableTalkingDataGooglePlay){
+            TalkingDataSDK.initSDK(context, appId, channelId, custom);
+        }else{
+            TalkingDataSDK.init(context, appId, channelId, custom);
+        }
     }
 
     @ReactMethod
     public void startA() {
-        TalkingDataSDK.startA(context);
+        if(!com.talkingdata.sdk.BuildConfig.enableTalkingDataGooglePlay) {
+            TalkingDataSDK.startA(context);
+        }
     }
 
     @ReactMethod
