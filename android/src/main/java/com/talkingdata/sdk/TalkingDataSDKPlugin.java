@@ -38,7 +38,7 @@ public class TalkingDataSDKPlugin extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void init(String appId, String channelId, String custom) {
-        TalkingDataSDK.init(context, appId, channelId, custom);
+        TalkingDataSDK.initSDK(context, appId, channelId, custom);
     }
 
     @ReactMethod
@@ -48,7 +48,7 @@ public class TalkingDataSDKPlugin extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void setExceptionReportEnabled(Boolean enabled) {
-        TalkingDataSDK.setReportUncaughtExceptions(enabled)
+        TalkingDataSDK.setReportUncaughtExceptions(enabled);
     }
 
     @ReactMethod
@@ -260,16 +260,16 @@ public class TalkingDataSDKPlugin extends ReactContextBaseJavaModule {
             JSONObject jsonObject = new JSONObject(json);
             tdSearch.setCategory(jsonObject.optString("category", null));
             tdSearch.setContent(jsonObject.optString("content", null));
-            tdSearch.setItemId(jsonObject.optString("itemId", null));
-            tdSearch.setItemLocationId(jsonObject.optString("itemLocationId", null));
-            tdSearch.setDestination(jsonObject.optString("destination", null));
-            tdSearch.setOrigin(jsonObject.optString("origin", null));
-            if (jsonObject.has("startDate")){
-                tdSearch.setStartDate(jsonObject.optLong("startDate", 0));
-            }
-            if (jsonObject.has("endDate")){
-                tdSearch.setEndDate(jsonObject.optLong("endDate", 0));
-            }
+            // tdSearch.setItemId(jsonObject.optString("itemId", null));
+            // tdSearch.setItemLocationId(jsonObject.optString("itemLocationId", null));
+            // tdSearch.setDestination(jsonObject.optString("destination", null));
+            // tdSearch.setOrigin(jsonObject.optString("origin", null));
+            // if (jsonObject.has("startDate")){
+            //     tdSearch.setStartDate(jsonObject.optLong("startDate", 0));
+            // }
+            // if (jsonObject.has("endDate")){
+            //     tdSearch.setEndDate(jsonObject.optLong("endDate", 0));
+            // }
         }catch (Throwable t){
             t.printStackTrace();
         }
