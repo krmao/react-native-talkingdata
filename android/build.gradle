@@ -28,6 +28,12 @@ android {
         buildConfigField "boolean", "enableTalkingDataGooglePlay", enableTalkingDataGooglePlay.toString()
     }
 
+    sourceSets {
+        main {
+            java.srcDirs enableTalkingDataGooglePlay ? 'src/main/java-googleplay' : 'src/main/java'
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled true
