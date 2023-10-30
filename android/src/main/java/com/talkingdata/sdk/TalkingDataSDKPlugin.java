@@ -17,7 +17,7 @@ import com.tendcloud.tenddata.TalkingDataProfileType;
 import com.tendcloud.tenddata.TalkingDataGender;
 import com.tendcloud.tenddata.TalkingDataShoppingCart;
 import com.tendcloud.tenddata.TalkingDataSearch;
-import com.tendcloud.tenddata.TalkingDataTransaction;
+//import com.tendcloud.tenddata.TalkingDataTransaction;
 import com.tendcloud.tenddata.TalkingDataSDK;
 
 import org.json.JSONArray;
@@ -276,27 +276,27 @@ public class TalkingDataSDKPlugin extends ReactContextBaseJavaModule {
         return tdSearch;
     }
 
-    private TalkingDataTransaction getTransaction(String json) {
-        TalkingDataTransaction tdTransaction = TalkingDataTransaction.createTransaction();
-        if (TextUtils.isEmpty(json)) {
-            return tdTransaction;
-        }
-        try {
-            JSONObject jsonObject = new JSONObject(json);
-            tdTransaction.setTransactionId(jsonObject.optString("transactionId", null))
-                    .setCategory(jsonObject.optString("category", null))
-                    .setAmount(jsonObject.optInt("amount", 0))
-                    .setPersonA(jsonObject.optString("personA", null))
-                    .setPersonB(jsonObject.optString("personB", null))
-                    .setStartDate(jsonObject.optLong("startDate", 0))
-                    .setEndDate(jsonObject.optLong("endDate", 0))
-                    .setContent(jsonObject.optString("content", null))
-                    .setCurrencyType(jsonObject.optString("currencyType", null));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return tdTransaction;
-    }
+//    private TalkingDataTransaction getTransaction(String json) {
+//        TalkingDataTransaction tdTransaction = TalkingDataTransaction.createTransaction();
+//        if (TextUtils.isEmpty(json)) {
+//            return tdTransaction;
+//        }
+//        try {
+//            JSONObject jsonObject = new JSONObject(json);
+//            tdTransaction.setTransactionId(jsonObject.optString("transactionId", null))
+//                    .setCategory(jsonObject.optString("category", null))
+//                    .setAmount(jsonObject.optInt("amount", 0))
+//                    .setPersonA(jsonObject.optString("personA", null))
+//                    .setPersonB(jsonObject.optString("personB", null))
+//                    .setStartDate(jsonObject.optLong("startDate", 0))
+//                    .setEndDate(jsonObject.optLong("endDate", 0))
+//                    .setContent(jsonObject.optString("content", null))
+//                    .setCurrencyType(jsonObject.optString("currencyType", null));
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        return tdTransaction;
+//    }
     /**
      * 获取账户类型
      *
