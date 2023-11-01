@@ -87,46 +87,6 @@ class TalkingDataProfile{
 	}
 }
 
-class TalkingDataOrder {
-
-	constructor(orderId,total,currencyType) {
-		this.orderId = orderId;
-		this.total = total;
-		this.currencyType = currencyType;
-		this.items = new Array();
-  	}
-
-  	addItem(itemId,category,name,unitPrice,amount){
-  		this.items.push({'itemId':itemId,'category':category,'name':name,'unitPrice':unitPrice,'amount':amount});
-  	}
-
-  	get orderString(){
-  		return JSON.stringify({
-  			'orderId':this.orderId,
-  			'total':this.total,
-  			'currencyType':this.currencyType,
-  			'items':this.items
-  		});
-  	}
-}
-
-class TalkingDataShoppingCart {
-
-	constructor(){
-		this.items = new Array();
-	}
-
-  	addItem(itemId,category,name,unitPrice,amount){
-  		this.items.push({'itemId':itemId,'category':category,'name':name,'unitPrice':unitPrice,'amount':amount});
-  	}
-
-  	get shoppingCartString(){
-  		return JSON.stringify({
-  			'items':this.items
-  		});
-  	}
-}
-
 class TalkingDataSearch {
 
 	constructor(){
@@ -398,4 +358,4 @@ class TalkingDataSDK {
 
 }
 
-export {TalkingDataSDK,TalkingDataProfile,TalkingDataProfileType,TalkingDataGender,TalkingDataOrder,TalkingDataShoppingCart,TalkingDataSearch};
+export {TalkingDataSDK,TalkingDataProfile,TalkingDataProfileType,TalkingDataGender,TalkingDataSearch};

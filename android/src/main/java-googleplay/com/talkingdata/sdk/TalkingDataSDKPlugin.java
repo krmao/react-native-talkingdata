@@ -11,11 +11,9 @@ import com.facebook.react.bridge.ReadableArray;
 import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.bridge.ReadableNativeArray;
 import com.facebook.react.bridge.ReadableNativeMap;
-import com.tendcloud.tenddata.TalkingDataOrder;
 import com.tendcloud.tenddata.TalkingDataProfile;
 import com.tendcloud.tenddata.TalkingDataProfileType;
 import com.tendcloud.tenddata.TalkingDataGender;
-import com.tendcloud.tenddata.TalkingDataShoppingCart;
 import com.tendcloud.tenddata.TalkingDataSearch;
 import com.tendcloud.tenddata.TalkingDataSDK;
 
@@ -189,67 +187,6 @@ public class TalkingDataSDKPlugin extends ReactContextBaseJavaModule {
             t.printStackTrace();
         }
         return tdProfile;
-    }
-    /**
-     * 获取订单
-     *
-     * @param json 订单
-     * @return Order订单对象
-     */
-    private TalkingDataOrder getOrder(String json){
-        try{
-            JSONObject jsonObject = new JSONObject(json);
-            TalkingDataOrder order = TalkingDataOrder.createOrder(jsonObject.optString("orderId"), jsonObject.optInt("total"), jsonObject.optString("currencyType"));
-            JSONArray items = jsonObject.optJSONArray("items");
-            if (items != null){
-                for (int i = 0;i<items.length();i++) {
-                    JSONObject item = items.optJSONObject(i);
-                    String id = item.optString("itemId");
-                    String category = item.optString("category");
-                    String name = item.optString("name");
-                    int unitPrice = item.optInt("unitPrice");
-                    int count = item.optInt("amount");
-                    if (TextUtils.isEmpty(id)) {
-                        order.addItem(category,name,unitPrice,count);
-                    }else{
-                        order.addItem(id,category,name,unitPrice,count);
-                    }
-                }
-            }
-            return order;
-        }catch (Throwable t){
-            t.printStackTrace();
-        }
-        return null;
-    }
-
-    /**
-     * 获取购物车
-     *
-     * @param json 购物车
-     * @return ShoppingCart购物车对象
-     */
-    private TalkingDataShoppingCart getShoppingCart(String json){
-        TalkingDataShoppingCart shoppingCart = TalkingDataShoppingCart.createShoppingCart();
-        try {
-            JSONObject jsonObject = new JSONObject(json);
-            JSONArray items = jsonObject.optJSONArray("items");
-            if (items != null){
-                for (int i = 0;i<items.length();i++) {
-                    JSONObject item = items.optJSONObject(i);
-                    String id = item.optString("itemId");
-                    String category = item.optString("category");
-                    String name = item.optString("name");
-                    int unitPrice = item.optInt("unitPrice");
-                    int count = item.optInt("amount");
-                    shoppingCart.addItem(id,category,name,unitPrice,count);
-                }
-            }
-        }catch (Throwable t){
-            t.printStackTrace();
-        }
-
-        return shoppingCart;
     }
 
     private TalkingDataSearch getSearch(String json){
